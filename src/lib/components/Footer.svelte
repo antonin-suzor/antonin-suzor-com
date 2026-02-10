@@ -1,80 +1,57 @@
-<script lang="ts">
-</script>
-
-<footer>
+<footer class="bg-psblack p-2.5 text-center font-main text-pswhite">
     Personal website of Antonin Suzor.
-    <div>
-        <a href="mailto:antonin@suzor.net" target="_blank" rel="noopener external">
+    <div class="flex justify-center">
+        <a
+            class="mx-3 my-0 justify-center text-pswhite hover:text-white hover:underline"
+            href="mailto:antonin@suzor.net"
+            target="_blank"
+            rel="noopener external"
+        >
             <img
                 src="/images/gmail-logo.svg"
                 alt="GMail"
-                class="logo"
-                style="filter: brightness(0.5) grayscale(100%)"
+                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
             />
             Email
         </a>
-        <a href="https://www.linkedin.com/in/antonin-suzor/" target="_blank" rel="noopener external">
+        <a
+            class="mx-3 my-0 justify-center text-pswhite hover:text-white hover:underline"
+            href="https://www.linkedin.com/in/antonin-suzor/"
+            target="_blank"
+            rel="noopener external"
+        >
             <img
                 src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg"
                 alt="LinkedIn"
-                class="logo"
-                style="filter: brightness(0.5) grayscale(100%)"
+                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
             />
             LinkedIn
         </a>
-        <a href="https://github.com/antonin-suzor" target="_blank" rel="noopener external">
+        <a
+            class="mx-3 my-0 justify-center text-pswhite hover:text-white hover:underline"
+            href="https://github.com/antonin-suzor"
+            target="_blank"
+            rel="noopener external"
+        >
             <img
                 src="https://icon.icepanel.io/Technology/svg/GitHub.svg"
                 alt="Github"
-                class="logo"
-                style="filter: brightness(2)"
+                class="h-10 w-10 justify-self-center brightness-200 sm:h-12 sm:w-12"
             />
             GitHub
         </a>
-        <a href="https://discord.gg/AgCZ9AnbMs" target="_blank" rel="noopener external">
+        <a
+            class="mx-3 my-0 justify-center text-pswhite hover:text-white hover:underline"
+            href="https://discord.gg/AgCZ9AnbMs"
+            target="_blank"
+            rel="noopener external"
+        >
             <img
                 src="/images/discord-logo.svg"
                 alt="Discord"
-                class="logo"
-                style="filter: brightness(0.5) grayscale(100%)"
+                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
             />
             Discord
         </a>
     </div>
 </footer>
-
-<style>
-    footer {
-        background-color: var(--pseudo-black);
-        color: var(--pseudo-white);
-        font-family: var(--main-font);
-        text-align: center;
-        padding: 10px;
-    }
-    div {
-        display: flex;
-        justify-content: center;
-    }
-    a {
-        color: var(--pseudo-white);
-        text-decoration: none;
-        margin: 0px 12px;
-        justify-content: center;
-    }
-    a:hover {
-        color: #ffffff;
-        text-decoration: underline;
-    }
-    .logo {
-        width: 48px;
-        height: 48px;
-        justify-self: center;
-    }
-
-    @media (max-width: 640px) {
-        .logo {
-            width: 40px;
-            height: 40px;
-        }
-    }
-</style>
