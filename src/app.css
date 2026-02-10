@@ -1,19 +1,6 @@
 @import url(https://fonts.bunny.net/css?family=dm-serif-display:400|fira-sans:400);
 @import 'tailwindcss';
 
-:root {
-    --title-font: 'DM Serif Display';
-    --main-font: 'Fira Sans';
-    --pseudo-white: #ffeeee;
-    --pseudo-black: #331111;
-    --pseudo-grey: #443333;
-    --sv-orange: #ff3e00;
-    --text-1: #471313;
-    --text-2: #681616;
-    --background-1: #ecc56f;
-    --background-2: #d1ab58;
-}
-
 @theme {
     --color-pswhite: #ffeeee;
     --color-psblack: #331111;
@@ -26,40 +13,4 @@
 
     --font-title: 'DM Serif Display', ui-serif, serif;
     --font-main: 'Fira sans', ui-sans-serif, system-ui, sans-serif;
-}
-
-@layer base {
-    h1,
-    h2,
-    h3 {
-        font-family: var(--title-font), serif;
-    }
-
-    h1 {
-        font-size: 3rem;
-        margin-top: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-        margin-top: 0.5rem;
-        margin-bottom: 1.3rem;
-    }
-
-    h3 {
-        font-size: 2rem;
-        margin-top: 0.5rem;
-        margin-bottom: 1.1rem;
-    }
-
-    p {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    body {
-        font-size: 1.25rem;
-        margin-bottom: 0.3rem;
-    }
 }
