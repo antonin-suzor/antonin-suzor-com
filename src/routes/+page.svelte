@@ -6,38 +6,35 @@
 
     const programmingSkills: Skill[] = [
         { name: 'Bash', logo: 'https://icon.icepanel.io/Technology/svg/Bash.svg' },
-        { name: 'C', logo: 'https://icon.icepanel.io/Technology/svg/C.svg' },
         { name: 'Rust', logo: 'https://icon.icepanel.io/Technology/svg/Rust.svg' },
         { name: 'Java', logo: 'https://icon.icepanel.io/Technology/svg/Java.svg' },
-        { name: 'JavaScript', logo: 'https://icon.icepanel.io/Technology/svg/JavaScript.svg' },
         { name: 'TypeScript', logo: 'https://icon.icepanel.io/Technology/svg/TypeScript.svg' },
-        { name: 'Mongo', logo: 'https://icon.icepanel.io/Technology/svg/MongoDB.svg' },
+        { name: 'Redis/Valkey', logo: 'https://icon.icepanel.io/Technology/svg/Redis.svg' },
         { name: 'Postgres/SQL', logo: 'https://icon.icepanel.io/Technology/svg/PostgresSQL.svg' },
-        { name: 'Spring', logo: 'https://icon.icepanel.io/Technology/svg/Spring.svg' },
         { name: 'Quarkus', logo: 'https://icon.icepanel.io/Technology/svg/Quarkus.svg' },
         { name: 'Express', logo: 'https://icon.icepanel.io/Technology/svg/Express.svg' },
         { name: 'NestJS', logo: 'https://icon.icepanel.io/Technology/svg/Nest.js.svg' },
         { name: 'React', logo: 'https://icon.icepanel.io/Technology/svg/React.svg' },
-        { name: 'Svelte/Kit', logo: 'https://icon.icepanel.io/Technology/svg/Svelte.svg' },
+        { name: 'NextJS', logo: 'https://icon.icepanel.io/Technology/svg/Next.js.svg' },
+        { name: 'SvelteKit', logo: 'https://icon.icepanel.io/Technology/svg/Svelte.svg' },
+        { name: 'TailwindCSS', logo: 'https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg' },
         { name: 'Tauri', logo: 'https://icon.icepanel.io/Technology/svg/Tauri.svg' },
     ];
 
     const devopsSkills: Skill[] = [
-        { name: 'Git', logo: 'https://icon.icepanel.io/Technology/svg/Git.svg' },
         { name: 'GitHub/Actions', logo: 'https://icon.icepanel.io/Technology/svg/GitHub.svg' },
         { name: 'GitLab/CI', logo: 'https://icon.icepanel.io/Technology/svg/GitLab.svg' },
         { name: 'Docker/Compose', logo: 'https://icon.icepanel.io/Technology/svg/Docker.svg' },
+        { name: 'K8s', logo: 'https://icon.icepanel.io/Technology/svg/Kubernetes.svg' },
         { name: 'Terraform', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg' },
         { name: 'AWS', logo: 'https://icon.icepanel.io/Technology/svg/AWS.svg' },
         { name: 'Cloudflare', logo: 'https://icon.icepanel.io/Technology/svg/Cloudflare.svg' },
-        { name: 'NginX', logo: 'https://icon.icepanel.io/Technology/svg/NGINX.svg' },
     ];
 
     const otherSkills: Skill[] = [
         { name: 'Keycloak', logo: 'https://avatars.githubusercontent.com/u/4921466' },
         { name: 'Notion', logo: '/images/notion-logo.svg' },
         { name: 'Discord', logo: '/images/discord-logo.svg' },
-        { name: 'Sveltia/CMS', logo: '/images/sveltia-logo.png' },
     ];
 </script>
 
@@ -60,13 +57,24 @@
         />
         <div class="hidden lg:inline lg:h-[275px] lg:w-1 lg:bg-sv"></div>
         <div class="text-center">
-            <h1 class="font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-7xl lg:leading-24">
+            <h1
+                class="justify-self-center font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-7xl lg:leading-24"
+            >
                 Antonin Suzor
             </h1>
-            <h2 class="mt-2 mb-4 font-title text-2xl leading-4 sm:text-3xl sm:leading-8 lg:text-5xl lg:leading-16">
-                DevOps & Cloud Engineer
+            <h2
+                class="mt-2 mb-4 justify-self-center font-title text-2xl leading-6 sm:text-3xl sm:leading-8 lg:text-5xl lg:leading-16"
+            >
+                <span class="text-nowrap">Site reliability engineer</span>
+                <span class="text-nowrap italic"
+                    >@ <a class="hover:underline" href="https://www.theodo.com/en-fr/expertise/cloud">Theodo Cloud</a
+                    ></span
+                >
             </h2>
-            <div class="mt-4 font-main text-xl text-sv italic">Shipping apps faster, safer, and at scale.</div>
+            <div class="mt-4 max-w-3xl justify-self-center font-main text-xl text-sv italic">
+                Accompanying companies in their cloud migration and modernisation by providing them with a fast-paced,
+                secure, and scalable platform for their IT.
+            </div>
         </div>
     </div>
 </section>
@@ -133,7 +141,7 @@
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Other Tools & Platforms</h3>
             <div class="mt-0.5 w-full overflow-hidden">
                 <div class="carousel carousel-other flex gap-[1.5rem] py-[1rem]">
-                    {#each [...otherSkills, ...otherSkills] as skill, idx (idx)}
+                    {#each [...otherSkills, ...otherSkills, ...otherSkills] as skill, idx (idx)}
                         <div class="skill-card">
                             <img class="skill-logo" src={skill.logo} alt={skill.name} />
                             <div>{skill.name}</div>
@@ -153,6 +161,24 @@
             Outside of work
         </h2>
         <div class="mb-6 max-w-4xl text-left">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Tech and Software enthusiast</h3>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
+                <strong>Even outside of my work, I tinker around with software or platforms</strong> to gain extra experience,
+                and I try to be in touch with the latest trends and innovations in the software development world.
+            </p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
+                I also try to keep up with and <strong
+                    >analyse the different moves made by the companies I work with</strong
+                > and their competitors, to always be on the forefront of change.
+            </p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
+                I'm ever so <strong
+                    >fond of learning new things or discussing about software and platform architecture</strong
+                >, and believe that by sharing ideas and debating, we come out with better understanding that we can
+                then apply in real-world scenarios.
+            </p>
+        </div>
+        <div class="mt-6 max-w-4xl justify-self-end text-right">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">D&D Game Master</h3>
             <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 <strong>I've ran D&D campaigns for 3 years</strong> combined, with multiple tables, at school, among friends,
@@ -166,23 +192,6 @@
             <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 <strong>I've currently taken a break from being a GM</strong>, as it is demanding in terms of time and
                 energy, but I still want to go back to TTRPGs someday.
-            </p>
-        </div>
-        <div class="mt-6 max-w-4xl justify-self-end text-right">
-            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Anime and video games enjoyer</h3>
-            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
-                Ah, yes, the classic stereotypical nerd interests. These have been part of my culture for a long time,
-                and <strong>I'm always up for a conversation or debate</strong> about them.
-            </p>
-            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
-                So much so that, for a year and a half, I was a <strong
-                    >moderator at the french VALORANT twitch channel</strong
-                >, talking to and trying to reason with people who sometimes just wanted to be annoying.
-            </p>
-            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
-                As always in debates, my personal policy is one of <strong
-                    >understanding, respect, and compromises</strong
-                >, which helped settle arguments between communities of opposite teams.
             </p>
         </div>
     </div>
@@ -223,7 +232,7 @@
     }
 
     .carousel-programming {
-        animation: scroll-left-programming calc(2.1s * 15) linear infinite;
+        animation: scroll-left-programming calc(2.1s * 14) linear infinite;
     }
 
     @keyframes scroll-left-programming {
@@ -231,12 +240,12 @@
             transform: translateX(20px);
         }
         100% {
-            transform: translateX(calc(-230px * 15));
+            transform: translateX(calc(-230px * 14));
         }
     }
 
     .carousel-devops {
-        animation: scroll-left-devops calc(2.1s * 8) linear infinite;
+        animation: scroll-left-devops calc(2.1s * 7) linear infinite;
     }
 
     @keyframes scroll-left-devops {
@@ -244,12 +253,12 @@
             transform: translateX(20px);
         }
         100% {
-            transform: translateX(calc(-230px * 8));
+            transform: translateX(calc(-230px * 7));
         }
     }
 
     .carousel-other {
-        animation: scroll-left-other calc(2.1s * 4) linear infinite;
+        animation: scroll-left-other calc(2.1s * 3) linear infinite;
     }
 
     @keyframes scroll-left-other {
@@ -257,7 +266,7 @@
             transform: translateX(20px);
         }
         100% {
-            transform: translateX(calc(-230px * 4));
+            transform: translateX(calc(-230px * 3));
         }
     }
 
