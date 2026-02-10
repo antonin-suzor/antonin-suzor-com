@@ -49,32 +49,46 @@
     <meta property="og:image" content="/images/antonin-suzor.jpg" />
 </svelte:head>
 
-<section class="hero" style="min-height: 100vh;">
-    <div class="intro">
-        <img class="profile-img" src="/images/antonin-suzor.jpg" alt="Antonin Suzor" />
-        <div class="vertical-bar"></div>
-        <div class="intro-text">
-            <h1>Antonin Suzor</h1>
-            <h2>DevOps & Cloud Engineer</h2>
-            <p class="catchphrase">Shipping apps faster, safer, and at scale.</p>
+<section class="flex min-h-screen items-center px-8 py-16">
+    <div
+        class="mx-auto grid items-center gap-4 p-4 sm:grid-cols-1 sm:gap-8 lg:grid-cols-[auto_2px_auto] lg:gap-16 lg:p-8"
+    >
+        <img
+            class="max-h-[70vh] max-w-[85vw] rounded-full object-contain shadow-xl lg:w-full lg:max-w-xl"
+            src="/images/antonin-suzor.jpg"
+            alt="Antonin Suzor"
+        />
+        <div class="hidden lg:inline lg:h-[275px] lg:w-1 lg:bg-sv"></div>
+        <div class="text-center">
+            <h1 class="font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-7xl lg:leading-24">
+                Antonin Suzor
+            </h1>
+            <h2 class="mt-2 mb-4 font-title text-2xl leading-4 sm:text-3xl sm:leading-8 lg:text-5xl lg:leading-16">
+                DevOps & Cloud Engineer
+            </h2>
+            <div class="mt-4 font-main text-xl text-sv italic">Shipping apps faster, safer, and at scale.</div>
         </div>
     </div>
 </section>
 
-<section class="hero" id="me" style="background-color: var(--background-2); color: var(--text-2);">
-    <div class="about">
-        <h2 style="text-decoration: underline 2px;">Who Am I ?</h2>
-        <p>
+<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="me">
+    <div class="mx-auto max-w-6xl p-12 text-center">
+        <h2
+            class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
+        >
+            Who Am I ?
+        </h2>
+        <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             Born in 2004 in South-Eastern France (Aix-en-Provence), I moved to Paris for my studies. With a deep passion
             for <strong>software engineering</strong>, <strong>enterprise IT</strong>, and
             <strong>continuous improvement</strong>, I thrive on creating efficient and scalable
             <strong>solutions that gain the trust</strong> of teams, leaders, and executives.
         </p>
-        <p>
+        <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             I have the firm belief that <strong>technology can be and is a formidable tool</strong> that unlocks possibilities
             and drives the world forward.
         </p>
-        <p>
+        <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             The people around me, colleagues, clients, and friends, are what truly motivates me. I am guided by my
             values of <strong>honesty, respect, and excellence</strong>. I make it a point to meet high standards and
             exceed expectations.
@@ -82,13 +96,15 @@
     </div>
 </section>
 
-<section class="hero" id="skills">
-    <div class="skills">
-        <h2 style="text-align: center;">Technical Skills</h2>
-        <div class="skill-category">
-            <h3>Programming Languages & Frameworks</h3>
-            <div class="carousel-container">
-                <div class="carousel carousel-programming">
+<section class="flex min-h-screen items-center px-8 py-16" id="skills">
+    <div class="mx-auto w-full max-w-[1200px] rounded-2xl bg-white/10 p-12 shadow-2xl">
+        <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
+            Technical Skills
+        </h2>
+        <div class="mb-8">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Programming Languages & Frameworks</h3>
+            <div class="mt-0.5 w-full overflow-hidden">
+                <div class="carousel carousel-programming flex gap-[1.5rem] py-[1rem]">
                     {#each [...programmingSkills, ...programmingSkills] as skill, idx (idx)}
                         <div class="skill-card">
                             <img class="skill-logo" src={skill.logo} alt={skill.name} />
@@ -99,10 +115,10 @@
             </div>
         </div>
 
-        <div class="skill-category">
-            <h3>Cloud & DevOps Tools</h3>
-            <div class="carousel-container">
-                <div class="carousel carousel-devops">
+        <div class="mb-8">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Cloud & DevOps Tools</h3>
+            <div class="mt-0.5 w-full overflow-hidden">
+                <div class="carousel carousel-devops flex gap-[1.5rem] py-[1rem]">
                     {#each [...devopsSkills, ...devopsSkills] as skill, idx (idx)}
                         <div class="skill-card">
                             <img class="skill-logo" src={skill.logo} alt={skill.name} />
@@ -113,10 +129,10 @@
             </div>
         </div>
 
-        <div class="skill-category">
-            <h3>Other Tools & Platforms</h3>
-            <div class="carousel-container">
-                <div class="carousel carousel-other">
+        <div class="mb-8">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Other Tools & Platforms</h3>
+            <div class="mt-0.5 w-full overflow-hidden">
+                <div class="carousel carousel-other flex gap-[1.5rem] py-[1rem]">
                     {#each [...otherSkills, ...otherSkills] as skill, idx (idx)}
                         <div class="skill-card">
                             <img class="skill-logo" src={skill.logo} alt={skill.name} />
@@ -129,37 +145,41 @@
     </div>
 </section>
 
-<section class="hero" id="hobbies" style="background-color: var(--background-2); color: var(--text-2);">
-    <div class="personal">
-        <h2 style="text-decoration: underline 2px;">Outside of work</h2>
-        <div class="dnd">
-            <h3>D&D Game Master</h3>
-            <p>
+<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="hobbies">
+    <div class="mx-auto w-6xl p-12 text-center">
+        <h2
+            class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
+        >
+            Outside of work
+        </h2>
+        <div class="mb-6 max-w-4xl text-left">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">D&D Game Master</h3>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 <strong>I've ran D&D campaigns for 3 years</strong> combined, with multiple tables, at school, among friends,
                 or at associations.
             </p>
-            <p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 Building immersive worlds for my players, <strong
                     >feeding from and into their different playstyles and imaginations</strong
                 >, and creating emotions and group cohesion has been such a blast.
             </p>
-            <p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 <strong>I've currently taken a break from being a GM</strong>, as it is demanding in terms of time and
                 energy, but I still want to go back to TTRPGs someday.
             </p>
         </div>
-        <div class="anime-games">
-            <h3>Anime and video games enjoyer</h3>
-            <p>
+        <div class="mt-6 max-w-4xl justify-self-end text-right">
+            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Anime and video games enjoyer</h3>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 Ah, yes, the classic stereotypical nerd interests. These have been part of my culture for a long time,
                 and <strong>I'm always up for a conversation or debate</strong> about them.
             </p>
-            <p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 So much so that, for a year and a half, I was a <strong
                     >moderator at the french VALORANT twitch channel</strong
                 >, talking to and trying to reason with people who sometimes just wanted to be annoying.
             </p>
-            <p>
+            <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 As always in debates, my personal policy is one of <strong
                     >understanding, respect, and compromises</strong
                 >, which helped settle arguments between communities of opposite teams.
@@ -168,22 +188,26 @@
     </div>
 </section>
 
-<section class="hero" id="contact">
-    <div class="contact">
-        <h2>Let's Talk !</h2>
-        <p>
+<section class="flex min-h-screen items-center px-8 py-16" id="contact">
+    <div class="mx-auto max-w-4xl rounded-2xl bg-white/10 p-12 text-center shadow-2xl">
+        <h2 class="mt-2 mb-4 font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">Let's Talk !</h2>
+        <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             Are you a company looking to hire ? An organization seeking technical expertise and/or services ? An
             individual with a project or questions ?
         </p>
-        <p>
+        <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             If you answered "yes" to any of these, feel free to contact me. And if you didn't, go ahead as well. After
             all, what's the worse that could happen ?
         </p>
-        <div class="contact-buttons">
-            <a href="mailto:antonin@suzor.net" class="contact-button">Send me an email</a>
+        <div class="mt-8 flex justify-center gap-4">
+            <a
+                href="mailto:antonin@suzor.net"
+                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:text-lg lg:px-8 lg:text-xl"
+                >Send me an email</a
+            >
             <a
                 href="https://www.linkedin.com/in/antonin-suzor/"
-                class="contact-button"
+                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:text-lg lg:px-8 lg:text-xl"
                 target="_blank"
                 rel="noopener external"
             >
@@ -194,156 +218,6 @@
 </section>
 
 <style>
-    h1 {
-        font-size: 5rem;
-        line-height: 1.2;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    h2 {
-        font-size: 3.5rem;
-        line-height: 1.3;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    h3 {
-        font-size: 2.5rem;
-        line-height: 1.4;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        font-size: 1.25rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .hero {
-        padding: 4rem 2rem;
-        display: flex;
-        align-items: center;
-        scroll-snap-align: start;
-        color: var(--text-1);
-    }
-
-    .intro {
-        display: grid;
-        grid-template-columns: auto 2px auto;
-        gap: 4rem;
-        align-items: center;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    .vertical-bar {
-        height: 275px;
-        width: 4px;
-        background-color: var(--sv-orange);
-    }
-
-    .profile-img {
-        border-radius: 50%;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    @media (max-width: 1024px) {
-        .intro {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .vertical-bar {
-            display: none;
-        }
-
-        .profile-img {
-            max-width: 85vw;
-            max-height: 85vh;
-        }
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .intro {
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .profile-img {
-            max-width: 85vw;
-            max-height: 85vh;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-    }
-
-    .intro-text {
-        text-align: center;
-    }
-
-    .catchphrase {
-        font-style: italic;
-        margin-top: 1rem;
-        color: var(--sv-orange);
-    }
-
-    .about {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-        padding: 3rem;
-    }
-
-    .skills {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .skill-category {
-        margin-bottom: 2rem;
-    }
-
-    .carousel-container {
-        width: 100%;
-        overflow: hidden;
-        border-radius: 12px;
-        position: relative;
-        margin-top: 1.5rem;
-    }
-
-    .carousel {
-        display: flex;
-        gap: 1.5rem;
-        padding: 1rem 0;
-    }
-
     .carousel:hover {
         animation-play-state: paused;
     }
@@ -388,7 +262,7 @@
     }
 
     .skill-card {
-        background: var(--pseudo-white);
+        background: #ffeeee;
         padding: 1.5rem;
         min-width: 220px;
         border-radius: 12px;
@@ -401,7 +275,7 @@
 
     .skill-card:hover {
         transform: translateY(-2px);
-        border-color: var(--pseudo-grey);
+        border-color: #443333;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
@@ -410,75 +284,5 @@
         height: 48px;
         margin: 0 auto 1rem;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .personal {
-        width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-        padding: 3rem;
-    }
-
-    .dnd {
-        text-align: left;
-        max-width: 850px;
-        margin-bottom: 25px;
-    }
-
-    .anime-games {
-        margin-top: 25px;
-        justify-self: right;
-        text-align: right;
-        max-width: 850px;
-    }
-
-    .contact {
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-        padding: 3rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-    .contact-button {
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background-color: var(--pseudo-white);
-        color: var(--sv-orange);
-        border: 2px solid transparent;
-    }
-
-    .contact-button:hover {
-        transform: translateY(-4px);
-        border-color: var(--sv-orange);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 1024px) {
-        .contact-button {
-            padding: 1rem 0.5rem;
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .contact-button {
-            padding: 1rem 0.5rem;
-            font-size: 0.75rem;
-        }
     }
 </style>
