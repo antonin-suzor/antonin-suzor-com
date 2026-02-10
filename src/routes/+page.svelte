@@ -49,12 +49,12 @@
     <meta property="og:image" content="/images/antonin-suzor.jpg" />
 </svelte:head>
 
-<section class="flex min-h-[100vh] snap-start items-center px-8 py-16">
+<section class="flex min-h-screen items-center px-8 py-16">
     <div
-        class="mx-auto my-0 grid items-center gap-4 p-4 sm:grid-cols-1 sm:gap-8 lg:grid-cols-[auto_2px_auto] lg:gap-16 lg:p-8"
+        class="mx-auto grid items-center gap-4 p-4 sm:grid-cols-1 sm:gap-8 lg:grid-cols-[auto_2px_auto] lg:gap-16 lg:p-8"
     >
         <img
-            class="max-h-[85vh] max-w-[85vw] rounded-full shadow-xl lg:w-full lg:max-w-[500px]"
+            class="max-h-[70vh] max-w-[85vw] rounded-full object-contain shadow-xl lg:w-full lg:max-w-xl"
             src="/images/antonin-suzor.jpg"
             alt="Antonin Suzor"
         />
@@ -71,8 +71,8 @@
     </div>
 </section>
 
-<section class="flex min-h-[100vh] snap-start items-center bg-bg2 px-8 py-16 text-tx2" id="me">
-    <div class="mx-auto my-0 max-w-[1200px] p-12 text-center">
+<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="me">
+    <div class="mx-auto max-w-6xl p-12 text-center">
         <h2
             class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
         >
@@ -96,8 +96,8 @@
     </div>
 </section>
 
-<section class="flex min-h-[100vh] snap-start items-center px-8 py-16" id="skills">
-    <div class="mx-auto my-0 w-full max-w-[1200px] rounded-2xl bg-white/10 p-12 shadow-2xl">
+<section class="flex min-h-screen items-center px-8 py-16" id="skills">
+    <div class="mx-auto w-full max-w-[1200px] rounded-2xl bg-white/10 p-12 shadow-2xl">
         <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
             Technical Skills
         </h2>
@@ -145,14 +145,14 @@
     </div>
 </section>
 
-<section class="flex min-h-[100vh] snap-start items-center bg-bg2 px-8 py-16 text-tx2" id="hobbies">
-    <div class="mx-auto my-0 w-[1200px] p-12 text-center">
+<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="hobbies">
+    <div class="mx-auto w-6xl p-12 text-center">
         <h2
             class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
         >
             Outside of work
         </h2>
-        <div class="mb-6 max-w-[850px] text-left">
+        <div class="mb-6 max-w-4xl text-left">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">D&D Game Master</h3>
             <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 <strong>I've ran D&D campaigns for 3 years</strong> combined, with multiple tables, at school, among friends,
@@ -168,7 +168,7 @@
                 energy, but I still want to go back to TTRPGs someday.
             </p>
         </div>
-        <div class="mt-6 max-w-[850px] justify-self-end text-right">
+        <div class="mt-6 max-w-4xl justify-self-end text-right">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Anime and video games enjoyer</h3>
             <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
                 Ah, yes, the classic stereotypical nerd interests. These have been part of my culture for a long time,
@@ -188,8 +188,8 @@
     </div>
 </section>
 
-<section class="flex min-h-[100vh] snap-start items-center px-8 py-16" id="contact">
-    <div class="mx-auto my-0 max-w-[900px] rounded-2xl bg-white/10 p-12 text-center shadow-2xl">
+<section class="flex min-h-screen items-center px-8 py-16" id="contact">
+    <div class="mx-auto max-w-4xl rounded-2xl bg-white/10 p-12 text-center shadow-2xl">
         <h2 class="mt-2 mb-4 font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">Let's Talk !</h2>
         <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
             Are you a company looking to hire ? An organization seeking technical expertise and/or services ? An

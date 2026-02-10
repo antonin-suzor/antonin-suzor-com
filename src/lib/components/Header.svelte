@@ -1,42 +1,40 @@
-<header
-    class="sticky top-0 z-10 overflow-hidden bg-psblack font-title leading-[40px] text-pswhite sm:leading-[44px] lg:leading-[48px]"
->
+<header class="sticky top-0 z-10 bg-psblack font-title text-pswhite">
     <a
         href="/"
-        class="float-left block px-2.5 py-1.5 text-center text-[28px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[32px] lg:px-4 lg:py-2 lg:text-[36px]"
-        id="nav-brand">Antonin Suzor</a
+        class="float-left block px-2.5 py-1.5 text-center text-3xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:leading-11 lg:px-4 lg:py-2 lg:text-4xl lg:leading-12"
+        >Antonin Suzor</a
     >
     <nav>
         <ul class="float-right flex">
-            <li
-                class="m-0 block h-full px-2.5 py-1.5 text-center text-[20px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[22px] lg:px-4 lg:py-2 lg:text-[24px]"
-                id="nav-home"
-            >
-                <a href="/">Home</a>
+            <li class="hidden sm:inline">
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/">Home</a
+                >
             </li>
-            <li
-                class="m-0 block h-full px-2.5 py-1.5 text-center text-[20px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[22px] lg:px-4 lg:py-2 lg:text-[24px]"
-                id="nav-me"
-            >
-                <a href="/#me">Me</a>
+            <li>
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/#me">Me</a
+                >
             </li>
-            <li
-                class="m-0 block h-full px-2.5 py-1.5 text-center text-[20px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[22px] lg:px-4 lg:py-2 lg:text-[24px]"
-                id="nav-skills"
-            >
-                <a href="/#skills">Skills</a>
+            <li>
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/#skills">Skills</a
+                >
             </li>
-            <li
-                class="m-0 block h-full px-2.5 py-1.5 text-center text-[20px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[22px] lg:px-4 lg:py-2 lg:text-[24px]"
-                id="nav-hobbies"
-            >
-                <a href="/#hobbies">Hobbies</a>
+            <li>
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/#hobbies">Hobbies</a
+                >
             </li>
-            <li
-                class="m-0 block h-full px-2.5 py-1.5 text-center text-[20px] text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:text-[22px] lg:px-4 lg:py-2 lg:text-[24px]"
-                id="nav-contact"
-            >
-                <a href="/#contact">Contact</a>
+            <li>
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/#contact">Contact</a
+                >
             </li>
         </ul>
     </nav>
