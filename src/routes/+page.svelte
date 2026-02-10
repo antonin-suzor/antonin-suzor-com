@@ -36,6 +36,16 @@
         { name: 'Notion', logo: '/images/notion-logo.svg' },
         { name: 'Discord', logo: '/images/discord-logo.svg' },
     ];
+
+    let progSkillsDiv: HTMLDivElement;
+    let devopsSkillsDiv: HTMLDivElement;
+    let otherSkillsDiv: HTMLDivElement;
+    function scrollLeft(div: HTMLDivElement) {
+        div.scrollBy({ left: -250, behavior: 'smooth' });
+    }
+    function scrollRight(div: HTMLDivElement) {
+        div.scrollBy({ left: 250, behavior: 'smooth' });
+    }
 </script>
 
 <svelte:head>
@@ -104,50 +114,89 @@
     </div>
 </section>
 
-<section class="flex min-h-screen items-center px-8 py-16" id="skills">
-    <div class="mx-auto w-full max-w-[1200px] rounded-2xl bg-white/10 p-12 shadow-2xl">
+<section class="flex min-h-screen items-center px-4 py-16" id="skills">
+    <div class="mx-auto w-full max-w-[1200px] rounded-2xl bg-white/10 p-4 shadow-2xl sm:p-12">
         <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
             Technical Skills
         </h2>
         <div class="mb-8">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Programming Languages & Frameworks</h3>
-            <div class="mt-0.5 w-full overflow-hidden">
-                <div class="carousel carousel-programming flex gap-[1.5rem] py-[1rem]">
-                    {#each [...programmingSkills, ...programmingSkills] as skill, idx (idx)}
-                        <div class="skill-card">
-                            <img class="skill-logo" src={skill.logo} alt={skill.name} />
-                            <div>{skill.name}</div>
+            <div class="flex items-center gap-2 justify-self-center">
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollLeft(progSkillsDiv)}>&lt;</button
+                >
+                <div
+                    bind:this={progSkillsDiv}
+                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                >
+                    {#each programmingSkills as skill (skill.name)}
+                        <div
+                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                        >
+                            <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
+                            <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
                         </div>
                     {/each}
                 </div>
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollRight(progSkillsDiv)}>&gt;</button
+                >
             </div>
         </div>
 
         <div class="mb-8">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Cloud & DevOps Tools</h3>
-            <div class="mt-0.5 w-full overflow-hidden">
-                <div class="carousel carousel-devops flex gap-[1.5rem] py-[1rem]">
-                    {#each [...devopsSkills, ...devopsSkills] as skill, idx (idx)}
-                        <div class="skill-card">
-                            <img class="skill-logo" src={skill.logo} alt={skill.name} />
-                            <div>{skill.name}</div>
+            <div class="flex items-center gap-2 justify-self-center">
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollLeft(devopsSkillsDiv)}>&lt;</button
+                >
+                <div
+                    bind:this={devopsSkillsDiv}
+                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                >
+                    {#each devopsSkills as skill (skill.name)}
+                        <div
+                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                        >
+                            <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
+                            <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
                         </div>
                     {/each}
                 </div>
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollRight(devopsSkillsDiv)}>&gt;</button
+                >
             </div>
         </div>
 
         <div class="mb-8">
             <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Other Tools & Platforms</h3>
-            <div class="mt-0.5 w-full overflow-hidden">
-                <div class="carousel carousel-other flex gap-[1.5rem] py-[1rem]">
-                    {#each [...otherSkills, ...otherSkills, ...otherSkills] as skill, idx (idx)}
-                        <div class="skill-card">
-                            <img class="skill-logo" src={skill.logo} alt={skill.name} />
-                            <div>{skill.name}</div>
+            <div class="flex items-center gap-2 justify-self-center">
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollLeft(otherSkillsDiv)}>&lt;</button
+                >
+                <div
+                    bind:this={otherSkillsDiv}
+                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                >
+                    {#each otherSkills as skill (skill.name)}
+                        <div
+                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                        >
+                            <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
+                            <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
                         </div>
                     {/each}
                 </div>
+                <button
+                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                    onclick={() => scrollRight(otherSkillsDiv)}>&gt;</button
+                >
             </div>
         </div>
     </div>
@@ -225,73 +274,3 @@
         </div>
     </div>
 </section>
-
-<style>
-    .carousel:hover {
-        animation-play-state: paused;
-    }
-
-    .carousel-programming {
-        animation: scroll-left-programming calc(2.1s * 14) linear infinite;
-    }
-
-    @keyframes scroll-left-programming {
-        0% {
-            transform: translateX(20px);
-        }
-        100% {
-            transform: translateX(calc(-230px * 14));
-        }
-    }
-
-    .carousel-devops {
-        animation: scroll-left-devops calc(2.1s * 7) linear infinite;
-    }
-
-    @keyframes scroll-left-devops {
-        0% {
-            transform: translateX(20px);
-        }
-        100% {
-            transform: translateX(calc(-230px * 7));
-        }
-    }
-
-    .carousel-other {
-        animation: scroll-left-other calc(2.1s * 3) linear infinite;
-    }
-
-    @keyframes scroll-left-other {
-        0% {
-            transform: translateX(20px);
-        }
-        100% {
-            transform: translateX(calc(-230px * 3));
-        }
-    }
-
-    .skill-card {
-        background: #ffeeee;
-        padding: 1.5rem;
-        min-width: 220px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        flex-shrink: 0;
-    }
-
-    .skill-card:hover {
-        transform: translateY(-2px);
-        border-color: #443333;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .skill-logo {
-        width: 48px;
-        height: 48px;
-        margin: 0 auto 1rem;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-</style>
