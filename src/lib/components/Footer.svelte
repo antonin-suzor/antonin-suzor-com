@@ -5,7 +5,7 @@
             class="mx-3 justify-center text-pswhite hover:text-white hover:underline"
             href="mailto:antonin@suzor.net"
             target="_blank"
-            rel="noopener external"
+            rel="me"
         >
             <img
                 src="/images/gmail-logo.svg"
@@ -18,7 +18,7 @@
             class="mx-3 justify-center text-pswhite hover:text-white hover:underline"
             href="https://www.linkedin.com/in/antonin-suzor/"
             target="_blank"
-            rel="noopener external"
+            rel="noopener external me"
         >
             <img
                 src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg"
@@ -31,7 +31,7 @@
             class="mx-3 justify-center text-pswhite hover:text-white hover:underline"
             href="https://github.com/antonin-suzor"
             target="_blank"
-            rel="noopener external"
+            rel="noopener external me"
         >
             <img
                 src="https://icon.icepanel.io/Technology/svg/GitHub.svg"

@@ -41,10 +41,10 @@
     let devopsSkillsDiv: HTMLDivElement;
     let otherSkillsDiv: HTMLDivElement;
     function scrollLeft(div: HTMLDivElement) {
-        div.scrollBy({ left: -250, behavior: 'smooth' });
+        div.scrollBy({ left: -260, behavior: 'smooth' });
     }
     function scrollRight(div: HTMLDivElement) {
-        div.scrollBy({ left: 250, behavior: 'smooth' });
+        div.scrollBy({ left: 260, behavior: 'smooth' });
     }
 </script>
 
@@ -56,7 +56,7 @@
     <meta property="og:image" content="/images/antonin-suzor.jpg" />
 </svelte:head>
 
-<section class="flex min-h-screen items-center px-8 py-16">
+<section class="flex min-h-screen items-center px-2 py-12 sm:px-4 sm:py-16 lg:px-8">
     <div
         class="mx-auto grid items-center gap-4 p-4 sm:grid-cols-1 sm:gap-8 lg:grid-cols-[auto_2px_auto] lg:gap-16 lg:p-8"
     >
@@ -65,7 +65,7 @@
             src="/images/antonin-suzor.jpg"
             alt="Antonin Suzor"
         />
-        <div class="hidden lg:inline lg:h-[275px] lg:w-1 lg:bg-sv"></div>
+        <div class="hidden lg:inline lg:h-68.75 lg:w-1 lg:bg-sv"></div>
         <div class="text-center">
             <h1
                 class="justify-self-center font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-7xl lg:leading-24"
@@ -77,7 +77,11 @@
             >
                 <span class="text-nowrap">Site reliability engineer</span>
                 <span class="text-nowrap italic"
-                    >@ <a class="hover:underline" href="https://www.theodo.com/en-fr/expertise/cloud">Theodo Cloud</a
+                    >@ <a
+                        class="hover:underline"
+                        href="https://www.theodo.com/en-fr/expertise/cloud"
+                        target="_blank"
+                        rel="noopener external">Theodo Cloud</a
                     ></span
                 >
             </h2>
@@ -89,7 +93,7 @@
     </div>
 </section>
 
-<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="me">
+<section class="flex min-h-screen items-center bg-bg2 px-4 py-14 text-tx2 sm:px-6 sm:py-16 lg:px-8" id="me">
     <div class="mx-auto max-w-6xl p-12 text-center">
         <h2
             class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
@@ -115,7 +119,7 @@
 </section>
 
 <section class="flex min-h-screen items-center px-4 py-16" id="skills">
-    <div class="mx-auto w-full max-w-[1200px] rounded-2xl bg-white/10 p-4 shadow-2xl sm:p-12">
+    <div class="mx-auto w-full max-w-300 rounded-2xl bg-white/10 p-4 shadow-2xl sm:p-12">
         <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
             Technical Skills
         </h2>
@@ -128,11 +132,11 @@
                 >
                 <div
                     bind:this={progSkillsDiv}
-                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                 >
                     {#each programmingSkills as skill (skill.name)}
                         <div
-                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                            class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
                         >
                             <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
                             <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
@@ -155,11 +159,11 @@
                 >
                 <div
                     bind:this={devopsSkillsDiv}
-                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                 >
                     {#each devopsSkills as skill (skill.name)}
                         <div
-                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                            class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
                         >
                             <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
                             <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
@@ -182,11 +186,11 @@
                 >
                 <div
                     bind:this={otherSkillsDiv}
-                    class="flex w-[250px] flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-[500px] sm:scroll-pl-[20px] lg:w-[750px] lg:scroll-pl-[15px] 2xl:w-[1000px] 2xl:scroll-pl-[10px]"
+                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                 >
                     {#each otherSkills as skill (skill.name)}
                         <div
-                            class="mx-[30px] my-4 flex w-[200px] shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
+                            class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start"
                         >
                             <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
                             <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
@@ -202,7 +206,7 @@
     </div>
 </section>
 
-<section class="flex min-h-screen items-center bg-bg2 px-8 py-16 text-tx2" id="hobbies">
+<section class="flex min-h-screen items-center bg-bg2 px-4 py-14 text-tx2 sm:px-6 sm:py-16 lg:px-8" id="hobbies">
     <div class="mx-auto w-6xl p-12 text-center">
         <h2
             class="mt-2 mb-4 font-title text-3xl leading-8 underline decoration-2 underline-offset-2 sm:text-4xl sm:leading-16 lg:text-6xl"
@@ -246,7 +250,7 @@
     </div>
 </section>
 
-<section class="flex min-h-screen items-center px-8 py-16" id="contact">
+<section class="flex min-h-screen items-center px-4 py-14 sm:px-6 sm:py-16 lg:px-8" id="contact">
     <div class="mx-auto max-w-4xl rounded-2xl bg-white/10 p-12 text-center shadow-2xl">
         <h2 class="mt-2 mb-4 font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">Let's Talk !</h2>
         <p class="text-md mb-1 sm:mb-1.5 sm:text-xl">
@@ -257,17 +261,18 @@
             If you answered "yes" to any of these, feel free to contact me. And if you didn't, go ahead as well. After
             all, what's the worse that could happen ?
         </p>
-        <div class="mt-8 flex justify-center gap-4">
+        <div class="mt-8 grid grid-cols-2 justify-center gap-4">
             <a
                 href="mailto:antonin@suzor.net"
-                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:text-lg lg:px-8 lg:text-xl"
-                >Send me an email</a
+                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:px-4 sm:text-lg lg:px-8 lg:text-xl"
+                target="_blank"
+                rel="me">Send me an email</a
             >
             <a
                 href="https://www.linkedin.com/in/antonin-suzor/"
-                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:text-lg lg:px-8 lg:text-xl"
+                class="text-md rounded-md border-2 border-transparent bg-pswhite px-2 py-4 font-bold tracking-wide text-sv uppercase transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-sv hover:shadow-xl sm:px-4 sm:text-lg lg:px-8 lg:text-xl"
                 target="_blank"
-                rel="noopener external"
+                rel="noopener external me"
             >
                 Connect on LinkedIn
             </a>
