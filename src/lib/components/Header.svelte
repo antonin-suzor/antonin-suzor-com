@@ -6,13 +6,19 @@
     >
     <nav>
         <ul class="float-right flex">
-            <li class="hidden sm:inline">
+            <li class="hidden lg:inline">
                 <a
                     class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
                     href="/">Home</a
                 >
             </li>
             <li>
+                <a
+                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                    href="/blog">Blog</a
+                >
+            </li>
+            <li class="hidden sm:inline">
                 <a
                     class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
                     href="/#me">Me</a
@@ -24,7 +30,7 @@
                     href="/#skills">Skills</a
                 >
             </li>
-            <li>
+            <li class="hidden sm:inline">
                 <a
                     class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
                     href="/#hobbies">Hobbies</a
