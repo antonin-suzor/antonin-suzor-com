@@ -1,0 +1,5 @@
+cd build ; du -sh --apparent-size _app/
+
+before blog, _app = 104KB
+1st blog implementation, _app = 233K
+2nd blog implementation, with md rendering moved to the server, _app = 145K
