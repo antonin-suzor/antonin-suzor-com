@@ -32,7 +32,7 @@ And yes, I was (and still am) honestly shocked that this website is that large. 
 
 ## The easy fix (this time)
 
-Luckily, the fix was easy. Simply migrate the rendering logic from the \`+page.svelte\` file to the \`+page.server.ts\` file, update the data passed in from the server to the page, and we're good to go.
+Luckily, the fix was easy. Simply migrate the rendering logic from the `+page.svelte` file to the `+page.server.ts` file, update the data passed in from the server to the page, and we're good to go.
 While at it, migrate the libraries from standard dependencies to developer dependencies, so that they can only be used while developing and at build-time, where they were supposed to go anyway.
 
 With that, I successfully shrunk back my bundle size from 233KB back to **145KB**. A **38% decrease**, for a total **39% increase** compared to before the blog was a thing. The extra code probably comes from every need that arises from shallow routing (client-side navigation), though I'm not entirely certain.

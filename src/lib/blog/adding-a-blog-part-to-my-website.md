@@ -4,7 +4,7 @@ description: Exploring the process I followed and the tech I used to build a blo
 thumbnail: ''
 thumbnail_alt: ''
 created_at: 2026-03-22
-updated_at: ''
+updated_at: 2026-03-30
 ---
 
 The PR discussed in this article is here: https://github.com/antonin-suzor/antonin-suzor-com/pull/4
@@ -71,3 +71,5 @@ Though I think I already have a few potential topics. Looking forward to explori
 
 If you've made it here, thank you for reading this. I hope you learned a few things, maybe this helped you set up your own blog.
 If you have any inquiries, feel free to hit me up however you like.
+
+Follow-up article: https://antonin-suzor.com/blog/i-bloated-my-bundle-size-then-shrunk-it-back
