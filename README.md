@@ -10,3 +10,7 @@ Edit the frontend:
 npm install
 npm run dev
 ```
+
+Edit blog posts:
+- locally: http://localhost:5173/admin/index.html
+- via internet: https://antonin-suzor.com/admin/index.html
