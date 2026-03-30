@@ -7,8 +7,8 @@ My personal website.
 Edit the frontend:
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Edit blog posts:
