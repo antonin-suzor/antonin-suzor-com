@@ -10,7 +10,7 @@
             <img
                 src="/images/gmail-logo.svg"
                 alt="GMail"
-                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
+                class="h-10 w-10 justify-self-center brightness-75 grayscale sm:h-12 sm:w-12"
             />
             Email
         </a>
@@ -23,7 +23,7 @@
             <img
                 src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg"
                 alt="LinkedIn"
-                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
+                class="h-10 w-10 justify-self-center brightness-75 grayscale sm:h-12 sm:w-12"
             />
             LinkedIn
         </a>
@@ -36,7 +36,7 @@
             <img
                 src="https://icon.icepanel.io/Technology/svg/GitHub.svg"
                 alt="GitHub"
-                class="h-10 w-10 justify-self-center brightness-200 sm:h-12 sm:w-12"
+                class="h-10 w-10 justify-self-center brightness-300 sm:h-12 sm:w-12"
             />
             GitHub
         </a>
@@ -49,7 +49,7 @@
             <img
                 src="/images/discord-logo.svg"
                 alt="Discord"
-                class="h-10 w-10 justify-self-center brightness-50 grayscale sm:h-12 sm:w-12"
+                class="h-10 w-10 justify-self-center brightness-75 grayscale sm:h-12 sm:w-12"
             />
             Discord
         </a>

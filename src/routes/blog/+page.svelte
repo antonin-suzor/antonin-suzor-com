@@ -1,4 +1,5 @@
 <script lang="ts">
+    import myPicture from '$lib/assets/pictures/antonin-suzor.jpg';
     let { data } = $props();
 </script>
 
@@ -7,7 +8,8 @@
     <meta property="og:title" content="Blog Posts | Antonin Suzor" />
     <meta name="description" content="Antonin Suzor's blog posts" />
     <meta property="og:description" content="Antonin Suzor's blog posts" />
-    <meta property="og:image" content="/images/antonin-suzor.jpg" />
+    <meta property="og:image" content={myPicture} />
+    <meta property="og:image:alt" content="Antonin Suzor" />
 </svelte:head>
 
 <div class="mx-auto max-w-80 p-1 sm:max-w-150 sm:p-2 lg:max-w-200 lg:p-4 2xl:max-w-275 2xl:p-8">

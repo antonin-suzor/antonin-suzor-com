@@ -1,4 +1,6 @@
 <script lang="ts">
+    import myPicture from '$lib/assets/pictures/antonin-suzor.jpg';
+
     interface Skill {
         name: string;
         logo: string;
@@ -53,7 +55,8 @@
     <meta property="og:title" content="Antonin Suzor" />
     <meta name="description" content="Antonin Suzor's personal website" />
     <meta property="og:description" content="Antonin Suzor's personal website" />
-    <meta property="og:image" content="/images/antonin-suzor.jpg" />
+    <meta property="og:image" content={myPicture} />
+    <meta property="og:image:alt" content="Antonin Suzor" />
 </svelte:head>
 
 <section class="flex min-h-screen items-center px-2 py-12 sm:px-4 sm:py-16 lg:px-8">
@@ -62,7 +65,7 @@
     >
         <img
             class="max-h-[70vh] max-w-[85vw] rounded-full object-contain shadow-xl lg:w-full lg:max-w-xl"
-            src="/images/antonin-suzor.jpg"
+            src={myPicture}
             alt="Antonin Suzor"
         />
         <div class="hidden lg:inline lg:h-68.75 lg:w-1 lg:bg-sv"></div>
