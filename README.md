@@ -7,6 +7,6 @@ My personal website.
 Run the website locally:
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
