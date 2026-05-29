@@ -20,7 +20,6 @@
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "0.8.0",
-    "sharp": "0.34.5",
     "tailwindcss": "^4.2.0",
     "typescript": "6.0.3",
     "vite-plugin-devtools-json": "^1.0.0"
