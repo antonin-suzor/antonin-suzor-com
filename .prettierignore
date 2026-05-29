@@ -1,5 +1,5 @@
-static/
-.svelte-kit/
-build/
+public/
+.astro/
+dist/
 node_modules/
 README.md
