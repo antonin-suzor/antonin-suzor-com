@@ -58,26 +58,30 @@ const otherSkills: OtherSkill[] = [
         <div
             class="mx-auto grid items-center gap-4 p-4 sm:grid-cols-1 sm:gap-8 lg:grid-cols-[auto_2px_auto] lg:gap-16 lg:p-8"
         >
-            <Image
-                class="max-h-[70vh] max-w-[85vw] rounded-full object-contain shadow-xl lg:w-full lg:max-w-xl"
-                src={myPicture}
-                alt="Antonin Suzor"
-                format="webp"
-                widths={[320, 480, 640, 840]}
-                sizes="(max-width: 1024px) 85vw, 40vw"
-                quality={80}
-                loading="eager"
-                decoding="async"
-            />
+            <div
+                class="aspect-square w-[min(85vw,70vh)] justify-self-center overflow-hidden rounded-full shadow-xl lg:w-full lg:max-w-xl"
+            >
+                <Image
+                    class="h-full w-full object-cover"
+                    src={myPicture}
+                    alt="Antonin Suzor"
+                    format="webp"
+                    widths={[320, 480, 640, 840]}
+                    sizes="(max-width: 1024px) min(85vw, 70vh), 40vw"
+                    quality={80}
+                    loading="eager"
+                    decoding="async"
+                />
+            </div>
             <div class="hidden lg:inline lg:h-68.75 lg:w-1 lg:bg-sv"></div>
             <div class="text-center">
                 <h1
-                    class="justify-self-center font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-7xl lg:leading-24"
+                    class="justify-self-center font-title text-5xl leading-12 sm:text-6xl sm:leading-16 lg:text-6xl lg:leading-20 xl:text-7xl xl:leading-24"
                 >
                     Antonin Suzor
                 </h1>
                 <h2
-                    class="mt-2 mb-4 justify-self-center font-title text-2xl leading-6 sm:text-3xl sm:leading-8 lg:text-5xl lg:leading-16"
+                    class="mt-2 mb-4 justify-self-center font-title text-2xl leading-6 sm:text-3xl sm:leading-8 lg:text-4xl lg:leading-12 xl:text-5xl xl:leading-16"
                 >
                     <span class="text-nowrap">Site reliability engineer</span>
                     <span class="text-nowrap italic"
@@ -89,7 +93,7 @@ const otherSkills: OtherSkill[] = [
                         ></span
                     >
                 </h2>
-                <div class="mt-4 max-w-3xl justify-self-center font-main text-xl text-sv italic">
+                <div class="mt-4 max-w-3xl justify-self-center font-main text-xl text-sv italic lg:text-lg xl:text-xl">
                     Accompanying companies in their cloud migration and modernisation by providing them with a
                     fast-paced, secure, and scalable platform for their IT.
                 </div>
