@@ -1,0 +1,45 @@
+---
+import '../app.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+    ogImageAlt?: string;
+}
+
+const {
+    title = 'Antonin Suzor',
+    description = "Antonin Suzor's personal website",
+    ogImage,
+    ogImageAlt = 'Antonin Suzor',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg" href="/icon.svg" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        {ogImage && <meta property="og:image" content={ogImage} />}
+        {ogImage && <meta property="og:image:alt" content={ogImageAlt} />}
+    </head>
+    <body class="m-0 h-full bg-psblack p-0 font-main text-tx1">
+        <div class="flex min-h-screen flex-col bg-bg1">
+            <Header />
+
+            <main class="flex-1">
+                <slot />
+            </main>
+
+            <Footer />
+        </div>
+    </body>
+</html>

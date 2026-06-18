@@ -4,13 +4,9 @@ My personal website.
 
 ## How-to
 
-Edit the frontend:
+Run the website locally:
 
 ```bash
 bun install
 bun run dev
 ```
-
-Edit blog posts:
-- locally: http://localhost:5173/admin/index.html
-- via internet: https://antonin-suzor.com/admin/index.html
