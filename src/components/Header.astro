@@ -1,41 +1,72 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, stripLocaleFromPath, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+
+const pathWithoutLocale = stripLocaleFromPath(Astro.url.pathname);
+const englishUrl = pathWithoutLocale;
+const frenchUrl = getRelativeLocaleUrl('fr', pathWithoutLocale);
+
+const homeUrl = getRelativeLocaleUrl(lang, '/');
+const aboutUrl = getRelativeLocaleUrl(lang, '/about/');
+const blogUrl = getRelativeLocaleUrl(lang, '/blog/');
+---
+
 <header class="sticky top-0 z-10 bg-psblack font-title text-pswhite">
     <a
-        href="/"
+        href={homeUrl}
         class="float-left block px-2.5 py-1.5 text-center text-3xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3.5 sm:py-2 sm:leading-11 lg:px-4 lg:py-2 lg:text-4xl lg:leading-12"
         >Antonin Suzor</a
     >
-    <nav>
-        <ul class="float-right flex">
-            <li class="hidden lg:inline">
-                <a
-                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
-                    href="/">Home</a
-                >
-            </li>
-            <li class="hidden sm:inline">
-                <a
-                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
-                    href="/#me">Me</a
-                >
-            </li>
-            <li>
-                <a
-                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
-                    href="/#skills">Skills</a
-                >
-            </li>
-            <li class="hidden sm:inline">
-                <a
-                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
-                    href="/#hobbies">Hobbies</a
-                >
-            </li>
-            <li>
-                <a
-                    class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
-                    href="/#contact">Contact</a
-                >
-            </li>
-        </ul>
-    </nav>
+    <div class="float-right flex">
+        <nav aria-label="Main navigation">
+            <ul class="flex">
+                <li>
+                    <a
+                        class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                        href={homeUrl}>{translate('navHome')}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                        href={aboutUrl}>{translate('navAbout')}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="block px-2.5 py-1.5 text-center text-xl leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-xl sm:leading-11 lg:px-4 lg:py-2 lg:text-2xl lg:leading-12"
+                        href={blogUrl}>{translate('navBlog')}</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <nav aria-label={translate('languageLabel')}>
+            <ul class="flex">
+                <li>
+                    <a
+                        class="block px-2.5 py-1.5 text-center text-lg leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-lg sm:leading-11 lg:px-4 lg:py-2 lg:text-xl lg:leading-12"
+                        href={englishUrl}
+                        lang="en"
+                        hreflang="en"
+                        aria-label={`${translate('languageLabel')}: ${languages.en}`}
+                        aria-current={lang === 'en' ? 'page' : undefined}>{languages.en}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="block px-2.5 py-1.5 text-center text-lg leading-10 text-pswhite hover:bg-psgrey hover:text-white hover:underline sm:px-3 sm:py-2 sm:text-lg sm:leading-11 lg:px-4 lg:py-2 lg:text-xl lg:leading-12"
+                        href={frenchUrl}
+                        lang="fr"
+                        hreflang="fr"
+                        aria-label={`${translate('languageLabel')}: ${languages.fr}`}
+                        aria-current={lang === 'fr' ? 'page' : undefined}>{languages.fr}</a
+                    >
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>

@@ -1,7 +1,9 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import '../app.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getLangFromUrl, stripLocaleFromPath } from '../i18n/utils';
 
 interface Props {
     title?: string;
@@ -16,10 +18,20 @@ const {
     ogImage,
     ogImageAlt = 'Antonin Suzor',
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const pathWithoutLocale = stripLocaleFromPath(Astro.url.pathname);
+const canonicalPath = getRelativeLocaleUrl(lang, pathWithoutLocale);
+const englishPath = pathWithoutLocale;
+const frenchPath = getRelativeLocaleUrl('fr', pathWithoutLocale);
+
+const canonicalUrl = Astro.site ? new URL(canonicalPath, Astro.site).toString() : canonicalPath;
+const englishUrl = Astro.site ? new URL(englishPath, Astro.site).toString() : englishPath;
+const frenchUrl = Astro.site ? new URL(frenchPath, Astro.site).toString() : frenchPath;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,6 +40,10 @@ const {
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="en" href={englishUrl} />
+        <link rel="alternate" hreflang="fr" href={frenchUrl} />
+        <link rel="alternate" hreflang="x-default" href={englishUrl} />
         {ogImage && <meta property="og:image" content={ogImage} />}
         {ogImage && <meta property="og:image:alt" content={ogImageAlt} />}
     </head>
