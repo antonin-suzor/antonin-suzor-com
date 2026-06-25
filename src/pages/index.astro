@@ -19,37 +19,53 @@ function isImageMetadata(logo: OtherSkill['logo']): logo is ImageMetadata {
     return typeof logo !== 'string';
 }
 
-const programmingSkills: Skill[] = [
+const softwareSkills: Skill[] = [
     { name: 'Bash', logo: 'https://icon.icepanel.io/Technology/svg/Bash.svg' },
     { name: 'Rust', logo: 'https://icon.icepanel.io/Technology/svg/Rust.svg' },
     { name: 'Java', logo: 'https://icon.icepanel.io/Technology/svg/Java.svg' },
     { name: 'TypeScript', logo: 'https://icon.icepanel.io/Technology/svg/TypeScript.svg' },
-    { name: 'Redis/Valkey', logo: 'https://icon.icepanel.io/Technology/svg/Redis.svg' },
     { name: 'Postgres/SQL', logo: 'https://icon.icepanel.io/Technology/svg/PostgresSQL.svg' },
-    { name: 'Quarkus', logo: 'https://icon.icepanel.io/Technology/svg/Quarkus.svg' },
-    { name: 'Express', logo: 'https://icon.icepanel.io/Technology/svg/Express.svg' },
-    { name: 'NestJS', logo: 'https://icon.icepanel.io/Technology/svg/Nest.js.svg' },
+    { name: 'SQLite', logo: 'https://icon.icepanel.io/Technology/svg/SQLite.svg' },
+    { name: 'Redis/Valkey', logo: 'https://icon.icepanel.io/Technology/svg/Redis.svg' },
+    { name: 'RabbitMQ', logo: 'https://icon.icepanel.io/Technology/svg/RabbitMQ.svg' },
+    { name: 'Bun', logo: 'https://icon.icepanel.io/Technology/svg/Bun.svg' },
+    { name: 'Drizzle', logo: 'https://orm.drizzle.team/public/images/drizzle_text_light.svg' },
     { name: 'React', logo: 'https://icon.icepanel.io/Technology/svg/React.svg' },
-    { name: 'NextJS', logo: 'https://icon.icepanel.io/Technology/svg/Next.js.svg' },
     { name: 'SvelteKit', logo: 'https://icon.icepanel.io/Technology/svg/Svelte.svg' },
+    { name: 'Astro', logo: 'https://icon.icepanel.io/Technology/svg/Astro.svg' },
     { name: 'TailwindCSS', logo: 'https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg' },
     { name: 'Tauri', logo: 'https://icon.icepanel.io/Technology/svg/Tauri.svg' },
 ];
 
-const devopsSkills: Skill[] = [
-    { name: 'GitHub/Actions', logo: 'https://icon.icepanel.io/Technology/svg/GitHub.svg' },
-    { name: 'GitLab/CI', logo: 'https://icon.icepanel.io/Technology/svg/GitLab.svg' },
-    { name: 'Docker/Compose', logo: 'https://icon.icepanel.io/Technology/svg/Docker.svg' },
-    { name: 'K8s', logo: 'https://icon.icepanel.io/Technology/svg/Kubernetes.svg' },
-    { name: 'Terraform', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg' },
+const cloudSkills: Skill[] = [
+    { name: 'Kubernetes', logo: 'https://icon.icepanel.io/Technology/svg/Kubernetes.svg' },
     { name: 'AWS', logo: 'https://icon.icepanel.io/Technology/svg/AWS.svg' },
-    { name: 'Cloudflare', logo: 'https://icon.icepanel.io/Technology/svg/Cloudflare.svg' },
+    { name: 'GCP', logo: 'https://icon.icepanel.io/Technology/svg/Google-Cloud.svg' },
+    { name: 'OVH', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/ovh.svg' },
+    { name: 'Cloudflare/Workers', logo: 'https://icon.icepanel.io/Technology/svg/Cloudflare.svg' },
+    { name: 'Terraform', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg' },
+    {
+        name: 'Terragrunt',
+        logo: 'https://seltonfiuza.gallerycdn.vsassets.io/extensions/seltonfiuza/terragrunt-easy-plan/0.1.0/1692128682569/Microsoft.VisualStudio.Services.Icons.Default',
+    },
 ];
 
-const otherSkills: OtherSkill[] = [
-    { name: 'Keycloak', logo: keycloakAvatar },
-    { name: 'Notion', logo: '/images/notion-logo.svg' },
-    { name: 'Discord', logo: '/images/discord-logo.svg' },
+const devopsSkills: OtherSkill[] = [
+    { name: 'ArgoCD', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/argo-cd.svg' },
+    { name: 'GitHub/Actions', logo: 'https://icon.icepanel.io/Technology/svg/GitHub.svg' },
+    { name: 'GitLab/CI', logo: 'https://icon.icepanel.io/Technology/svg/GitLab.svg' },
+    { name: 'Keycloak', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/keycloak.svg' },
+    { name: 'Vault', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Vault.svg' },
+    {
+        name: 'NeuVector',
+        logo: 'https://www.suse.com/c/wp-content/uploads/2024/01/NeuVector_symbol_horizontal_color.jpg',
+    },
+    { name: 'CNPG', logo: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloud-native-pg.svg' },
+    { name: 'Prometheus', logo: 'https://icon.icepanel.io/Technology/svg/Prometheus.svg' },
+    { name: 'Grafana', logo: 'https://icon.icepanel.io/Technology/svg/Grafana.svg' },
+    { name: 'External-DNS', logo: 'https://kubernetes-sigs.github.io/external-dns/latest/docs/img/external-dns.png' },
+    { name: 'External-Secrets', logo: 'https://external-secrets.io/latest/pictures/eso-round-logo.svg' },
+    { name: 'Docker/Compose', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/docker.svg' },
 ];
 ---
 
@@ -95,7 +111,8 @@ const otherSkills: OtherSkill[] = [
                 </h2>
                 <div class="mt-4 max-w-3xl justify-self-center font-main text-xl text-sv italic lg:text-lg xl:text-xl">
                     Accompanying companies in their cloud migration and modernisation by providing them with a
-                    fast-paced, secure, and scalable platform for their IT.
+                    fast-paced, secure, and scalable platform for their IT.<br />
+                    Currently looking for a permanent job starting from September.
                 </div>
             </div>
         </div>
@@ -146,7 +163,7 @@ const otherSkills: OtherSkill[] = [
                         class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                     >
                         {
-                            programmingSkills.map((skill) => (
+                            softwareSkills.map((skill) => (
                                 <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
                                     <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
                                     <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
@@ -163,7 +180,7 @@ const otherSkills: OtherSkill[] = [
             </div>
 
             <div class="mb-8">
-                <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Cloud & DevOps Tools</h3>
+                <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Cloud Platforms & Tools</h3>
                 <div class="flex items-center gap-2 justify-self-center">
                     <button
                         class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
@@ -175,7 +192,7 @@ const otherSkills: OtherSkill[] = [
                         class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                     >
                         {
-                            devopsSkills.map((skill) => (
+                            cloudSkills.map((skill) => (
                                 <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
                                     <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
                                     <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
@@ -192,7 +209,7 @@ const otherSkills: OtherSkill[] = [
             </div>
 
             <div class="mb-8">
-                <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Other Tools & Platforms</h3>
+                <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Devops Tools & Software</h3>
                 <div class="flex items-center gap-2 justify-self-center">
                     <button
                         class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
@@ -204,7 +221,7 @@ const otherSkills: OtherSkill[] = [
                         class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
                     >
                         {
-                            otherSkills.map((skill) => (
+                            devopsSkills.map((skill) => (
                                 <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
                                     {isImageMetadata(skill.logo) ? (
                                         <Image
