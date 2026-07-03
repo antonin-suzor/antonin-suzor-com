@@ -2,10 +2,11 @@
 # Auto-format staged files with Prettier, then re-stage them.
 # Enable once per clone with:  git config core.hooksPath .githooks
 
-staged=$(git diff --cached --name-only --diff-filter=ACM)
-[ -z "$staged" ] && exit 0
+# Nothing staged? nothing to do.
+git diff --cached --name-only --diff-filter=ACM | grep -q . || exit 0
 
-echo "$staged" | xargs bunx prettier --write --ignore-unknown
-echo "$staged" | xargs git add
+# NUL-delimited throughout so paths with spaces/newlines survive.
+git diff --cached --name-only --diff-filter=ACM -z | xargs -0 bunx prettier --write --ignore-unknown
+git diff --cached --name-only --diff-filter=ACM -z | xargs -0 git add
 
 exit 0

@@ -19,7 +19,7 @@ export const experiences: TimelineEntry[] = [
         dates: 'Feb 2026 - Aug 2026',
         type: 'End-of-studies internship',
         description: [
-            'First 2 months: operating and maintaining cloud infrastructures for 20 clients on AWS and GCP, with new deployments depending on business needs, fixing down environments, and finops optimisations.',
+            'First 2 months: operating and maintaining cloud infrastructures for 20 clients on AWS and GCP, with new deployments depending on business needs, restoring downed environments, and FinOps optimisations.',
             'Following 4 months: build and run of a cloud platform for the ANS (French Government) on OVH. Automating access control, deploying resources depending on business needs, and security hardening of Kubernetes with best practices and NeuVector.',
         ],
         tech: [
@@ -41,7 +41,7 @@ export const experiences: TimelineEntry[] = [
         dates: 'Sept 2024 - Feb 2025',
         type: 'Mid-studies internship',
         description: [
-            'Rewrite of a webapp module handling meeting planning for bioconferences around the world. Maintained retrocompatibility while bringing in new technologies for better long-term maintainability.',
+            'Rewrite of a webapp module handling meeting planning for bioconferences around the world. Maintained backward compatibility while bringing in new technologies for better long-term maintainability.',
         ],
         tech: ['Java', 'SpringBoot', 'MySQL', 'Redis', 'Docker'],
     },
