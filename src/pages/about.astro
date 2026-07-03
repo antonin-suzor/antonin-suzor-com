@@ -6,7 +6,11 @@ import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
 ---
 
-<BaseLayout ogImage={myPicture.src}>
+<BaseLayout
+    title="About — Antonin Suzor"
+    description="Who Antonin Suzor is: an engineer passionate about software, enterprise IT, and continuous improvement — and what he does outside of work."
+    ogImage={myPicture.src}
+>
     <Hero />
 
     <section class="flex min-h-screen items-center bg-bg2 px-4 py-14 text-tx2 sm:px-6 sm:py-16 lg:px-8" id="me">

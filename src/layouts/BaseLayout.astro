@@ -16,6 +16,24 @@ const {
     ogImage,
     ogImageAlt = 'Antonin Suzor',
 } = Astro.props;
+
+// Absolute URLs, resolved against `site` in astro.config.mjs.
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : undefined;
+
+const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Antonin Suzor',
+    jobTitle: 'Software, Cloud & DevOps Engineer',
+    url: Astro.site?.href,
+    email: 'antonin@suzor.net',
+    sameAs: [
+        'https://www.linkedin.com/in/antonin-suzor/',
+        'https://github.com/antonin-suzor',
+        'https://gitlab.com/antonin-suzor',
+    ],
+};
 ---
 
 <!doctype html>
@@ -24,12 +42,24 @@ const {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg" href="/icon.svg" />
+        <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+        <link rel="canonical" href={canonicalURL} />
         <title>{title}</title>
         <meta name="description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        {ogImage && <meta property="og:image" content={ogImage} />}
-        {ogImage && <meta property="og:image:alt" content={ogImageAlt} />}
+        {ogImageURL && <meta property="og:image" content={ogImageURL} />}
+        {ogImageURL && <meta property="og:image:alt" content={ogImageAlt} />}
+
+        <meta name="twitter:card" content={ogImageURL ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        {ogImageURL && <meta name="twitter:image" content={ogImageURL} />}
+
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     </head>
     <body class="m-0 h-full bg-psblack p-0 font-main text-tx1">
         <div class="flex min-h-screen flex-col bg-bg1">

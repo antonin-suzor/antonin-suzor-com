@@ -1,69 +1,71 @@
 ---
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import { logos } from '../lib/logos';
 
 interface Skill {
     name: string;
     logo: string;
 }
 
-interface OtherSkill {
-    name: string;
-    logo: string | ImageMetadata;
+interface SkillGroup {
+    title: string;
+    id: string;
+    skills: Skill[];
 }
 
-function isImageMetadata(logo: OtherSkill['logo']): logo is ImageMetadata {
-    return typeof logo !== 'string';
-}
-
-const softwareSkills: Skill[] = [
-    { name: 'Bash', logo: 'https://icon.icepanel.io/Technology/svg/Bash.svg' },
-    { name: 'C', logo: 'https://icon.icepanel.io/Technology/svg/C.svg' },
-    { name: 'Rust', logo: 'https://icon.icepanel.io/Technology/svg/Rust.svg' },
-    { name: 'Java', logo: 'https://icon.icepanel.io/Technology/svg/Java.svg' },
-    { name: 'TypeScript', logo: 'https://icon.icepanel.io/Technology/svg/TypeScript.svg' },
-    { name: 'Postgres/SQL', logo: 'https://icon.icepanel.io/Technology/svg/PostgresSQL.svg' },
-    { name: 'SQLite', logo: 'https://icon.icepanel.io/Technology/svg/SQLite.svg' },
-    { name: 'Redis/Valkey', logo: 'https://icon.icepanel.io/Technology/svg/Redis.svg' },
-    { name: 'RabbitMQ', logo: 'https://icon.icepanel.io/Technology/svg/RabbitMQ.svg' },
-    { name: 'Bun', logo: 'https://icon.icepanel.io/Technology/svg/Bun.svg' },
-    { name: 'Drizzle', logo: 'https://avatars.githubusercontent.com/u/108468352?s=200&v=4' },
-    { name: 'React', logo: 'https://icon.icepanel.io/Technology/svg/React.svg' },
-    { name: 'SvelteKit', logo: 'https://icon.icepanel.io/Technology/svg/Svelte.svg' },
-    { name: 'Astro', logo: 'https://icon.icepanel.io/Technology/svg/Astro.svg' },
-    { name: 'TailwindCSS', logo: 'https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg' },
-    { name: 'Tauri', logo: 'https://icon.icepanel.io/Technology/svg/Tauri.svg' },
-];
-
-const cloudSkills: Skill[] = [
-    { name: 'Kubernetes', logo: 'https://icon.icepanel.io/Technology/svg/Kubernetes.svg' },
-    { name: 'AWS', logo: 'https://icon.icepanel.io/Technology/svg/AWS.svg' },
-    { name: 'GCP', logo: 'https://icon.icepanel.io/Technology/svg/Google-Cloud.svg' },
-    { name: 'OVH', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/ovh.svg' },
-    { name: 'Cloudflare/Workers', logo: 'https://icon.icepanel.io/Technology/svg/Cloudflare.svg' },
-    { name: 'Terraform', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg' },
+const groups: SkillGroup[] = [
     {
-        name: 'Terragrunt',
-        logo: 'https://seltonfiuza.gallerycdn.vsassets.io/extensions/seltonfiuza/terragrunt-easy-plan/0.1.0/1692128682569/Microsoft.VisualStudio.Services.Icons.Default',
+        title: 'Programming Languages & Frameworks',
+        id: 'prog-skills',
+        skills: [
+            { name: 'Bash', logo: logos.Bash },
+            { name: 'C', logo: logos.C },
+            { name: 'Rust', logo: logos.Rust },
+            { name: 'Java', logo: logos.Java },
+            { name: 'TypeScript', logo: logos.TypeScript },
+            { name: 'Postgres/SQL', logo: logos.PostgreSQL },
+            { name: 'SQLite', logo: logos.SQLite },
+            { name: 'Redis/Valkey', logo: logos.Redis },
+            { name: 'RabbitMQ', logo: logos.RabbitMQ },
+            { name: 'Bun', logo: logos.Bun },
+            { name: 'Drizzle', logo: logos.Drizzle },
+            { name: 'React', logo: logos.React },
+            { name: 'SvelteKit', logo: logos.Svelte },
+            { name: 'Astro', logo: logos.Astro },
+            { name: 'TailwindCSS', logo: logos.Tailwind },
+            { name: 'Tauri', logo: logos.Tauri },
+        ],
     },
-];
-
-const devopsSkills: OtherSkill[] = [
-    { name: 'ArgoCD', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/argo-cd.svg' },
-    { name: 'GitHub/Actions', logo: 'https://icon.icepanel.io/Technology/svg/GitHub.svg' },
-    { name: 'GitLab/CI', logo: 'https://icon.icepanel.io/Technology/svg/GitLab.svg' },
-    { name: 'Keycloak', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/keycloak.svg' },
-    { name: 'Vault', logo: 'https://icon.icepanel.io/Technology/svg/HashiCorp-Vault.svg' },
     {
-        name: 'NeuVector',
-        logo: 'https://www.suse.com/c/wp-content/uploads/2024/01/NeuVector_symbol_horizontal_color.jpg',
+        title: 'Cloud Platforms & Tools',
+        id: 'devops-skills',
+        skills: [
+            { name: 'Kubernetes', logo: logos.Kubernetes },
+            { name: 'AWS', logo: logos.AWS },
+            { name: 'GCP', logo: logos.GCP },
+            { name: 'OVH', logo: logos.OVH },
+            { name: 'Cloudflare/Workers', logo: logos.Cloudflare },
+            { name: 'Terraform', logo: logos.Terraform },
+            { name: 'Terragrunt', logo: logos.Terragrunt },
+        ],
     },
-    { name: 'CNPG', logo: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloud-native-pg.svg' },
-    { name: 'Prometheus', logo: 'https://icon.icepanel.io/Technology/svg/Prometheus.svg' },
-    { name: 'Grafana', logo: 'https://icon.icepanel.io/Technology/svg/Grafana.svg' },
-    { name: 'External-DNS', logo: 'https://kubernetes-sigs.github.io/external-dns/latest/docs/img/external-dns.png' },
-    { name: 'External-Secrets', logo: 'https://external-secrets.io/latest/pictures/eso-round-logo.svg' },
-    { name: 'Docker/Compose', logo: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/docker.svg' },
+    {
+        title: 'Devops Tools & Software',
+        id: 'other-skills',
+        skills: [
+            { name: 'ArgoCD', logo: logos.ArgoCD },
+            { name: 'GitHub/Actions', logo: logos.GitHub },
+            { name: 'GitLab/CI', logo: logos.GitLab },
+            { name: 'Keycloak', logo: logos.Keycloak },
+            { name: 'Vault', logo: logos.Vault },
+            { name: 'NeuVector', logo: logos.NeuVector },
+            { name: 'CNPG', logo: logos.CNPG },
+            { name: 'Prometheus', logo: logos.Prometheus },
+            { name: 'Grafana', logo: logos.Grafana },
+            { name: 'External-DNS', logo: logos.ExternalDNS },
+            { name: 'External-Secrets', logo: logos.ExternalSecrets },
+            { name: 'Docker/Compose', logo: logos.Docker },
+        ],
+    },
 ];
 ---
 
@@ -72,102 +74,45 @@ const devopsSkills: OtherSkill[] = [
         <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
             Technical Skills
         </h2>
-        <div class="mb-8">
-            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Programming Languages & Frameworks</h3>
-            <div class="flex items-center gap-2 justify-self-center">
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="prog-skills"
-                    data-scroll-direction="left">&lt;</button
-                >
-                <div
-                    id="prog-skills"
-                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
-                >
-                    {
-                        softwareSkills.map((skill) => (
-                            <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
-                                <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
-                                <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
-                            </div>
-                        ))
-                    }
-                </div>
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="prog-skills"
-                    data-scroll-direction="right">&gt;</button
-                >
-            </div>
-        </div>
-
-        <div class="mb-8">
-            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Cloud Platforms & Tools</h3>
-            <div class="flex items-center gap-2 justify-self-center">
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="devops-skills"
-                    data-scroll-direction="left">&lt;</button
-                >
-                <div
-                    id="devops-skills"
-                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
-                >
-                    {
-                        cloudSkills.map((skill) => (
-                            <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
-                                <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
-                                <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
-                            </div>
-                        ))
-                    }
-                </div>
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="devops-skills"
-                    data-scroll-direction="right">&gt;</button
-                >
-            </div>
-        </div>
-
-        <div class="mb-8">
-            <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">Devops Tools & Software</h3>
-            <div class="flex items-center gap-2 justify-self-center">
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="other-skills"
-                    data-scroll-direction="left">&lt;</button
-                >
-                <div
-                    id="other-skills"
-                    class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
-                >
-                    {
-                        devopsSkills.map((skill) => (
-                            <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
-                                {isImageMetadata(skill.logo) ? (
-                                    <Image
-                                        src={skill.logo}
-                                        alt={skill.name}
-                                        width={64}
-                                        height={64}
-                                        class="h-16 w-16 object-contain"
-                                    />
-                                ) : (
+        {
+            groups.map((group) => (
+                <div class="mb-8">
+                    <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">{group.title}</h3>
+                    <div class="flex items-center gap-2 justify-self-center">
+                        <button
+                            class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                            data-scroll-target={group.id}
+                            data-scroll-direction="left"
+                            aria-label={`Scroll ${group.title} left`}
+                        >
+                            &lt;
+                        </button>
+                        <div
+                            id={group.id}
+                            class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
+                            tabindex="0"
+                            role="group"
+                            aria-label={group.title}
+                        >
+                            {group.skills.map((skill) => (
+                                <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
                                     <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
-                                )}
-                                <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
-                            </div>
-                        ))
-                    }
+                                    <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <button
+                            class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                            data-scroll-target={group.id}
+                            data-scroll-direction="right"
+                            aria-label={`Scroll ${group.title} right`}
+                        >
+                            &gt;
+                        </button>
+                    </div>
                 </div>
-                <button
-                    class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
-                    data-scroll-target="other-skills"
-                    data-scroll-direction="right">&gt;</button
-                >
-            </div>
-        </div>
+            ))
+        }
     </div>
 </section>
 

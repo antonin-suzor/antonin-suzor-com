@@ -1,0 +1,11 @@
+#!/bin/sh
+# Auto-format staged files with Prettier, then re-stage them.
+# Enable once per clone with:  git config core.hooksPath .githooks
+
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+
+echo "$staged" | xargs bunx prettier --write --ignore-unknown
+echo "$staged" | xargs git add
+
+exit 0
