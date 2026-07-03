@@ -1,0 +1,140 @@
+---
+import { logos } from '../lib/logos';
+
+interface Skill {
+    name: string;
+    logo: string;
+}
+
+interface SkillGroup {
+    title: string;
+    id: string;
+    skills: Skill[];
+}
+
+const groups: SkillGroup[] = [
+    {
+        title: 'Programming Languages & Frameworks',
+        id: 'prog-skills',
+        skills: [
+            { name: 'Bash', logo: logos.Bash },
+            { name: 'C', logo: logos.C },
+            { name: 'Rust', logo: logos.Rust },
+            { name: 'Java', logo: logos.Java },
+            { name: 'TypeScript', logo: logos.TypeScript },
+            { name: 'Postgres/SQL', logo: logos.PostgreSQL },
+            { name: 'SQLite', logo: logos.SQLite },
+            { name: 'Redis/Valkey', logo: logos.Redis },
+            { name: 'RabbitMQ', logo: logos.RabbitMQ },
+            { name: 'Bun', logo: logos.Bun },
+            { name: 'Drizzle', logo: logos.Drizzle },
+            { name: 'React', logo: logos.React },
+            { name: 'SvelteKit', logo: logos.Svelte },
+            { name: 'Astro', logo: logos.Astro },
+            { name: 'TailwindCSS', logo: logos.Tailwind },
+            { name: 'Tauri', logo: logos.Tauri },
+        ],
+    },
+    {
+        title: 'Cloud Platforms & Tools',
+        id: 'devops-skills',
+        skills: [
+            { name: 'Kubernetes', logo: logos.Kubernetes },
+            { name: 'AWS', logo: logos.AWS },
+            { name: 'GCP', logo: logos.GCP },
+            { name: 'OVH', logo: logos.OVH },
+            { name: 'Cloudflare/Workers', logo: logos.Cloudflare },
+            { name: 'Terraform', logo: logos.Terraform },
+            { name: 'Terragrunt', logo: logos.Terragrunt },
+        ],
+    },
+    {
+        title: 'DevOps Tools & Software',
+        id: 'other-skills',
+        skills: [
+            { name: 'ArgoCD', logo: logos.ArgoCD },
+            { name: 'GitHub/Actions', logo: logos.GitHub },
+            { name: 'GitLab/CI', logo: logos.GitLab },
+            { name: 'Keycloak', logo: logos.Keycloak },
+            { name: 'Vault', logo: logos.Vault },
+            { name: 'NeuVector', logo: logos.NeuVector },
+            { name: 'CNPG', logo: logos.CNPG },
+            { name: 'Prometheus', logo: logos.Prometheus },
+            { name: 'Grafana', logo: logos.Grafana },
+            { name: 'External-DNS', logo: logos.ExternalDNS },
+            { name: 'External-Secrets', logo: logos.ExternalSecrets },
+            { name: 'Docker/Compose', logo: logos.Docker },
+        ],
+    },
+];
+---
+
+<section class="flex min-h-screen items-center px-4 py-16" id="skills">
+    <div class="mx-auto w-full max-w-300 rounded-2xl bg-white/10 p-4 shadow-2xl sm:p-12">
+        <h2 class="mt-2 mb-4 text-center font-title text-3xl leading-8 sm:text-4xl sm:leading-16 lg:text-6xl">
+            Technical Skills
+        </h2>
+        {
+            groups.map((group) => (
+                <div class="mb-8">
+                    <h3 class="mt-2 mb-4 font-title text-2xl md:text-3xl lg:text-4xl">{group.title}</h3>
+                    <div class="flex items-center gap-2 justify-self-center">
+                        <button
+                            class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                            data-scroll-target={group.id}
+                            data-scroll-direction="left"
+                            aria-label={`Scroll ${group.title} left`}
+                        >
+                            &lt;
+                        </button>
+                        <div
+                            id={group.id}
+                            class="flex w-62.5 flex-none snap-x snap-mandatory justify-self-center overflow-x-scroll sm:w-125 sm:scroll-pl-5 lg:w-187.5 lg:scroll-pl-3.75 2xl:w-250 2xl:scroll-pl-2.5"
+                            tabindex="0"
+                            role="group"
+                            aria-label={group.title}
+                        >
+                            {group.skills.map((skill) => (
+                                <div class="mx-7.5 my-4 flex w-50 shrink-0 snap-center flex-col items-center gap-2 rounded-lg bg-white p-1 shadow-lg sm:snap-start">
+                                    <img src={skill.logo} alt={skill.name} class="h-16 w-16 object-contain" />
+                                    <span class="text-sm text-nowrap sm:text-base">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <button
+                            class="h-9 w-6 flex-none rounded-full bg-white text-center hover:cursor-pointer hover:bg-pswhite"
+                            data-scroll-target={group.id}
+                            data-scroll-direction="right"
+                            aria-label={`Scroll ${group.title} right`}
+                        >
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<script>
+    const SCROLL_OFFSET = 260;
+
+    document.querySelectorAll('button[data-scroll-target]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-scroll-target');
+            const direction = button.getAttribute('data-scroll-direction');
+
+            if (!targetId || !direction) {
+                return;
+            }
+
+            const scroller = document.getElementById(targetId);
+            if (!scroller) {
+                return;
+            }
+
+            const multiplier = direction === 'left' ? -1 : 1;
+            scroller.scrollBy({ left: SCROLL_OFFSET * multiplier, behavior: 'smooth' });
+        });
+    });
+</script>

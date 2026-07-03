@@ -1,0 +1,85 @@
+---
+import { logos } from '../lib/logos';
+import type { TimelineEntry } from '../lib/resume';
+
+interface Props {
+    title: string;
+    id: string;
+    entries: TimelineEntry[];
+    variant?: 'onBg1' | 'onBg2';
+    orgSeparator?: string;
+}
+
+const { title, id, entries, variant = 'onBg1', orgSeparator = '@' } = Astro.props;
+
+const onBg2 = variant === 'onBg2';
+const sectionClass = onBg2 ? 'bg-bg2 text-tx2' : '';
+const cardClass = onBg2 ? 'bg-white/20' : 'bg-white/10';
+const dotBorderClass = onBg2 ? 'border-bg2' : 'border-bg1';
+---
+
+<section class:list={['px-4 py-16 sm:px-6 lg:px-8', sectionClass]} id={id}>
+    <div class="mx-auto max-w-4xl">
+        <h2
+            class="mb-10 text-center font-title text-3xl leading-tight underline decoration-2 underline-offset-2 sm:text-4xl lg:text-6xl"
+        >
+            {title}
+        </h2>
+        <div class="relative">
+            <span class="absolute top-0 bottom-0 left-2 w-1 rounded-full bg-sv"></span>
+            <ol class="flex flex-col gap-8">
+                {
+                    entries.map((entry) => (
+                        <li class="relative pl-8">
+                            <span
+                                class:list={[
+                                    'absolute top-7 left-0.5 h-4 w-4 rounded-full border-4 bg-sv',
+                                    dotBorderClass,
+                                ]}
+                                aria-hidden="true"
+                            />
+                            <article class:list={['rounded-2xl p-6 shadow-xl sm:p-8', cardClass]}>
+                                <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                                    <h3 class="font-title text-2xl leading-tight sm:text-3xl">
+                                        {entry.role}
+                                        <span class="italic">
+                                            {` ${orgSeparator} `}
+                                            {entry.orgUrl ? (
+                                                <a
+                                                    class="hover:underline"
+                                                    href={entry.orgUrl}
+                                                    target="_blank"
+                                                    rel="noopener external"
+                                                >
+                                                    {entry.org}
+                                                </a>
+                                            ) : (
+                                                entry.org
+                                            )}
+                                            {entry.category && ` - ${entry.category}`}
+                                        </span>
+                                    </h3>
+                                    <span class="text-sm font-bold text-nowrap sm:text-base">{entry.dates}</span>
+                                </div>
+                                {entry.type && <p class="mb-3 text-sm italic sm:text-base">{entry.type}</p>}
+                                {entry.description.map((line) => (
+                                    <p class="text-md mb-2 sm:text-lg">{line}</p>
+                                ))}
+                                {entry.tech.length > 0 && (
+                                    <ul class="mt-4 flex list-none flex-wrap gap-2">
+                                        {entry.tech.map((name) => (
+                                            <li class="flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm text-tx1 shadow">
+                                                <img src={logos[name]} alt="" class="h-5 w-5 object-contain" />
+                                                {name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </article>
+                        </li>
+                    ))
+                }
+            </ol>
+        </div>
+    </div>
+</section>
