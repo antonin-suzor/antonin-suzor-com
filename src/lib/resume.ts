@@ -20,7 +20,7 @@ export const experiences: TimelineEntry[] = [
         type: 'End-of-studies internship',
         description: [
             'First 2 months: operating and maintaining cloud infrastructures for 20 clients on AWS and GCP, with new deployments depending on business needs, restoring downed environments, and FinOps optimisations.',
-            'Following 4 months: build and run of a cloud platform for the ANS (French Government) on OVH. Automating access control, deploying resources depending on business needs, and security hardening of Kubernetes with best practices and NeuVector.',
+            'Following 4 months: build and run of a cloud platform for the ANS (French Government) on OVH. Automating access control, deploying resources depending on business needs, security hardening of Kubernetes clusters, and migrating apps from one platform to another.',
         ],
         tech: [
             'Terraform',
@@ -64,11 +64,12 @@ export const projects: TimelineEntry[] = [
             'ArgoCD',
             'Vault',
             'Keycloak',
-            'Traefik',
+            'Kyverno',
             'Prometheus',
             'Grafana',
-            'GitLab',
-            'GitHub',
+            'Loki',
+            'Tempo',
+            'Pyroscope',
         ],
     },
     {
