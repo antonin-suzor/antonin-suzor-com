@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-    title = 'Antonin Suzor',
-    description = "Antonin Suzor's personal website",
+    title = 'Antonin Suzor — Software/Cloud/DevSecOps/Data Engineer',
+    description = 'Antonin Suzor is a Data Engineer at Inpart, with experience in software, cloud, and DevSecOps engineering.',
     ogImage,
     ogImageAlt = 'Antonin Suzor',
 } = Astro.props;
@@ -25,7 +25,12 @@ const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Antonin Suzor',
-    jobTitle: 'Software, Cloud & DevOps Engineer',
+    jobTitle: 'Software/Cloud/DevSecOps/Data Engineer',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'Inpart',
+        url: 'https://www.inpart.io/',
+    },
     url: Astro.site?.href,
     email: 'antonin@suzor.net',
     sameAs: [
