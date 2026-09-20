@@ -19,6 +19,7 @@ export const logos = {
     Tauri: '/logos/tauri.svg',
     Kubernetes: '/logos/kubernetes.svg',
     AWS: '/logos/aws.svg',
+    Snowflake: '/logos/snowflake.svg',
     GCP: '/logos/gcp.svg',
     OVH: '/logos/ovh.svg',
     Cloudflare: '/logos/cloudflare.svg',
