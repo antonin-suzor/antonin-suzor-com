@@ -7,6 +7,7 @@ export default defineConfig({
     site: 'https://www.antonin-suzor.com',
     output: 'static',
     trailingSlash: 'always',
+    compressHTML: true,
     integrations: [sitemap()],
     vite: {
         plugins: [tailwindcss(), devtoolsJson()],

@@ -13,6 +13,14 @@ export interface TimelineEntry {
 
 export const experiences: TimelineEntry[] = [
     {
+        role: 'Data Engineer',
+        org: 'Inpart',
+        orgUrl: 'https://www.inpart.io/',
+        dates: 'Sept 2026 - Today',
+        description: ['Building data pipelines and data products for the life sciences industry.'],
+        tech: ['AWS', 'Snowflake'],
+    },
+    {
         role: 'Site Reliability Engineer',
         org: 'Theodo Cloud',
         orgUrl: 'https://www.theodo.com/en-fr/expertise/cloud',
